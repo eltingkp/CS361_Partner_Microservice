@@ -15,8 +15,10 @@ This microservice creates a python object that contains a key value pair. The ke
 # Requirements
 
 Client requires the following modules:
--json
--socket
+<ul>
+ <li>json</li>
+ <li>socket</li>
+</ul>
 
 Server requires the following modules:
 -json
