@@ -32,11 +32,13 @@ Install modules as you normally would on your IDE
 
 
 # How to programmatically REQUEST data
--create socket
--connect to server
--create python object which is a key value pair. the key is "data" and the value is an api url
--convert python object to json string
--send json string to server in bytes
+<ul>
+ <li>create socket</li>
+ <li>connect to server</li>
+ <li>create python object which is a key value pair. the key is "data" and the value is an api url</li>
+ <li>convert python object to json string</li>
+ <li>send json string to server in bytes</li>
+</ul>
 
 exmaple:
 
@@ -48,12 +50,13 @@ client.send(bytes(json_string, 'utf-8'))
 
 
 # How to programmatically RECEIVE data
--create server socket
--bind socket
--print string "waiting for connection"
--initiate while loop, run while true
--client and server socket connect
--create data python object that receives and decodes message from client
+<ul>
+ <li>create server socket</li>
+ <li>bind socket</li>
+ <li>initiate while loop, run while true</li>
+ <li>client and server socket connect</li>
+ <li>create data python object that receives and decodes message from client</li>
+</ul>
 
 exmaple:
 
