@@ -27,6 +27,4 @@ while True:
 
     client.send(bytes(response.text, 'utf-8'))
 
-    # client.send(bytes(data, 'utf-8'))
-
     client.close()

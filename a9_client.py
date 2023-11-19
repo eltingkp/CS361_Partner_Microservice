@@ -11,9 +11,6 @@ json_string = json.dumps(movie_object)
 
 client.send(bytes(json_string, 'utf-8'))
 
-# message = client.recv(1024).decode()
+message = client.recv(1024).decode()
 
-# print(message)
-# print(type(message))
-
-print(client.recv(1024).decode())
+print(message)
