@@ -21,9 +21,11 @@ Client requires the following modules:
 </ul>
 
 Server requires the following modules:
--json
--socket
--requests
+<ul>
+ <li>json</li>
+ <li>socket</li>
+ <li>requests</li>
+</ul>
 
 
 # Installation 
@@ -65,4 +67,3 @@ while True:
     print("connected with", addr)
 
     data = client.recv(1024).decode()
-    print(data)
