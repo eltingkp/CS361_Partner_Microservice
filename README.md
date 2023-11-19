@@ -67,3 +67,6 @@ while True:
     print("connected with", addr)
 
     data = client.recv(1024).decode()
+    
+# UML sequence diagram
+<div style="width: 640px; height: 480px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://lucid.app/documents/embedded/e530e751-2337-452b-9b09-48b7a4d51c80" id="QZPOkskXDxvQ"></iframe></div>
