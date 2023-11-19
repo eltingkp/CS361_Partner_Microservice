@@ -64,4 +64,4 @@ while True:
 
 
 # UML sequence diagram
-![UML Sequence Diagram]
+![UML Sequence Diagram](/Sequence_diagram.svg)
