@@ -9,16 +9,16 @@ Movie Database Wrapper
 
 # Description
 
-This microservice creates a python object that contains a key value pair. The key is data, and the value is an API url. The python object is converted to a JSON string, and is sent to the server. The server creates a python object that receives and decodes the message from the client. It is then converted to JSON and a variable is created to hold the value (an API url) of the key from the JSON. A get request is sent to the API url, and the response is held in a variable. The server sends the response back to the client in bytes, and the client receives the response. 
+This microservice is written in Python. It receives and decodes messages that contain a URL from the client via sockets. The microservice then makes an HTTP request to get the data from the URL and sends it back to the client via sockets. 
 
 
 # Requirements
 
-Client requires the following modules:
+Client requires the following Python modules:
 - json
 - socket
 
-Server requires the following modules:
+Server requires the following Python modules:
 - json
 - socket
 - requests
@@ -26,15 +26,16 @@ Server requires the following modules:
 
 # Installation 
 
-Install modules as you normally would on your IDE 
+Install modules as you normally would in your IDE.
 
 
 # How to programmatically REQUEST data
-- create socket
-- connect to server
-- create python object which is a key value pair. the key is "data" and the value is an api url
- - convert python object to json string
- - send json string to server in bytes
+
+- Create a socket
+- Connect to server
+- Create Python object which is a single key value pair. The key is `data` and the value is an API URL.
+- Convert Python object to JSON string
+- Send JSON string to server in bytes
 
 example:
 ```py
@@ -47,21 +48,46 @@ client.send(bytes(json_string, 'utf-8'))
 
 
 # How to programmatically RECEIVE data
-- create server socket
-- bind socket
-- initiate while loop, run while true
-- client and server socket connect
-- create data python object that receives and decodes message from client
+
+- Use previously created socket connection
+- Receive data from server in bytes
+- Decode data to JSON string
 
 example:
 ```py
-while True:
-    client, addr = server.accept()
-    print("connected with", addr)
-
     data = client.recv(1024).decode()
+```
+
+example of data received: 
+```json
+{
+    "page": 1,
+    "results": [
+        {
+            "adult": false,
+            "backdrop_path": null,
+            "genre_ids": [
+                35
+            ],
+            "id": 110134,
+            "original_language": "en",
+            "original_title": "Michael McIntyre's Comedy Roadshow",
+            "overview": "This bonus disc from the Michael Mcintyre Stand-Up Collection DVD Box Set contains excerpts from the hilarious second series of Michael's Comedy Roadshow",
+            "popularity": 1.043,
+            "poster_path": "/q8fPt3MQr3zW6RXo5gbez8bz0Yv.jpg",
+            "release_date": "2009-11-16",
+            "title": "Michael McIntyre's Comedy Roadshow",
+            "video": true,
+            "vote_average": 6.9,
+            "vote_count": 5
+        }
+    ],
+    "total_pages": 45,
+    "total_results": 881
+}
 ```
 
 
 # UML sequence diagram
+
 ![UML Sequence Diagram](/Sequence_diagram.svg)
