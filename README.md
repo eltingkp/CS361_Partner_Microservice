@@ -29,10 +29,15 @@ Server requires the following Python modules:
 Install modules as you normally would in your IDE.
 
 
+# How to run microservice
+
+In terminal: python a9_server.py
+
+
 # How to programmatically REQUEST data
 
 - Create a socket
-- Connect to server
+- Connect to server at localhost: 3000
 - Create Python object which is a single key value pair. The key is `data` and the value is an API URL.
   - Replace `ENTER_YOUR_API_KEY` with your actual API key from [The Movie Database](https://www.themoviedb.org/?language=en-US).
   - ```json
